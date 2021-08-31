@@ -56,10 +56,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     perepl = 0.8;
                     pech = 1.7;
                     param = 2;
-                    g = a*b/s;
-                   /* switch (a){
-
-                    }*/
+                    g = a * b / s;
+                    if (a > 10) {
+                        pech = 4.0;
+                    } else {
+                        if (a > 100) {
+                            pech = 3.8;
+                        } else {
+                            if (a > 1000) {
+                                pech = 1.7;
+                            } else {
+                                if (a > 2000) {
+                                    pech = 1.4;
+                                } else {
+                                    if (a > 7000) {
+                                        pech = 0.9;
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
                 if(rBCheckBox.isChecked()) {
                     pril = 3.6;
@@ -68,6 +84,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     pech = 10.0;
                     param = 4;
                     g = 2*a*b/s;
+                    if (a > 10) {
+                        pech = 3.8;
+                    } else {
+                        if (a > 100) {
+                            pech = 3.6;
+                        } else {
+                            if (a > 1000) {
+                                pech = 1.5;
+                            } else {
+                                if (a > 2000) {
+                                    pech = 1.3;
+                                } else {
+                                    if (a > 7000) {
+                                        pech = 0.8;
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
                 if(kCheckBox.isChecked()) {
                     pril = 0.0;
