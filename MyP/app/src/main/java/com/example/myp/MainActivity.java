@@ -13,7 +13,7 @@ import static com.example.myp.R.*;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     Button btn, btn2;
-    Double pech, pril, podr, perepl, v1;
+    Double pech, pril, podr, perepl, g;
     Integer param;
     EditText edt1, edt2, edt3, edt5, edt6, edt7, edt9;
     CheckBox dCheckBox, rBCheckBox, kCheckBox;
@@ -43,45 +43,50 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v)
-            {
+            {   double a = (edt1.getText() == null) ? 0 : Integer.parseInt(edt1.getText().toString());
+                double b = (edt2.getText() == null) ? 0 : Integer.parseInt(edt2.getText().toString());
+                double c = (edt3.getText() == null) ? 0 : Integer.parseInt(edt3.getText().toString());
+                double d = (edt5.getText() == null) ? 0 : Integer.parseInt(edt5.getText().toString());
+                double e = (edt6.getText() == null) ? 0 : Integer.parseInt(edt6.getText().toString());
+                double f = (edt7.getText() == null) ? 0 : Integer.parseInt(edt7.getText().toString());
+                double s = (edt9.getText() == null) ? 0 : Integer.parseInt(edt9.getText().toString());
                 if(dCheckBox.isChecked()) {
-                    pril = 0.048;
-                    podr = 0.002;
-                    perepl = 0.008;
-                    pech = 20.0;
+                    pril = 20.0;
+                    podr = 0.2;
+                    perepl = 0.8;
+                    pech = 1.7;
                     param = 2;
-                    v1 = 1.0;
+                    g = a*b/s;
+                   /* switch (a){
+
+                    }*/
                 }
                 if(rBCheckBox.isChecked()) {
-                    pril = 0.036;
-                    podr = 0.002;
-                    perepl = 0.004;
+                    pril = 3.6;
+                    podr = 0.2;
+                    perepl = 0.4;
                     pech = 10.0;
                     param = 4;
-                    v1 = 0.5;
+                    g = 2*a*b/s;
                 }
                 if(kCheckBox.isChecked()) {
                     pril = 0.0;
-                    podr = 0.002;
-                    perepl = 0.008;
+                    podr = 0.2;
+                    perepl = 0.8;
                     pech = 0.0;
                     param = 4;
-                    v1 = 0.5;
+                    g = 2*a*b/s;
                 }
-                int a = (edt1.getText() == null) ? 0 : Integer.parseInt(edt1.getText().toString());
-                int b = (edt2.getText() == null) ? 0 : Integer.parseInt(edt2.getText().toString());
-                int c = (edt3.getText() == null) ? 0 : Integer.parseInt(edt3.getText().toString());
-                int d = (edt5.getText() == null) ? 0 : Integer.parseInt(edt5.getText().toString());
-                int e = (edt6.getText() == null) ? 0 : Integer.parseInt(edt6.getText().toString());
-                int f = (edt7.getText() == null) ? 0 : Integer.parseInt(edt7.getText().toString());
-                int s = (edt9.getText() == null) ? 0 : Integer.parseInt(edt9.getText().toString());
-                double g = a * b/v1*s;
-                Double h = g*perepl*f;
-                Double i = pril*f*g;
-                Double j = g*podr;
-                Double k = f*pech;
+                Double h = g*perepl/100;
+                Double i = pril*f;
+                Double j = g*podr/100;
+                Double k = f*pech*g/100;
+                double m = c/1000;
+                double n1 = e/100;
+                double n2 = d/100;
                 Double l= g + h + i + j + k;
-                txt2.setText(Double.toString(l/param*c/1000*e/100*d/100));
+                double o = l/param;
+                txt2.setText(Double.toString(o*m*n1*n2));
             }
         });
 
