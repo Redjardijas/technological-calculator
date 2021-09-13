@@ -4,10 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import static com.example.myp.R.*;
 
@@ -18,11 +22,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     EditText edt1, edt2, edt3, edt5, edt6, edt7, edt9;
     CheckBox dCheckBox, rBCheckBox, kCheckBox;
     TextView txt1, txt2, txt3, txt4, txt5;
+    Spinner sp3, sp1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(layout.activity_main);
+        sp1 = findViewById(id.spinner);
+        sp3 = findViewById(id.spinner3);
         btn = findViewById(id.button);
         edt1 = findViewById(id.ed1);
         edt2 = findViewById(id.ed2);
@@ -34,12 +41,32 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         edt5 = findViewById(id.ed5);
         edt6 = findViewById(id.ed6);
         edt7 = findViewById(id.ed7);
-      btn2 = findViewById(id.button2);
+        btn2 = findViewById(id.button2);
         txt1 = findViewById(id.size);
         txt2 = findViewById(id.textView2);
         txt3 = findViewById(id.edition);
         txt4 = findViewById(id.txtPages);
         txt5 = findViewById(id.txtPaper);
+       /* sp3.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            public void onItemSelected(AdapterView<?> parent,
+                                       View itemSelected, int selectedItemPosition, long selectedId) {
+
+                String[] choose = getResources().getStringArray(array.sizes);
+                Toast toast = Toast.makeText(getApplicationContext(),
+                        "Ваш выбор: " + choose[selectedItemPosition], Toast.LENGTH_SHORT);
+                toast.show();
+            }
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });*/
+               ArrayAdapter<?> adapter =
+                ArrayAdapter.createFromResource(this, array.sizes, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        sp3.setAdapter(adapter);
+        ArrayAdapter<?> adapter1 =
+                ArrayAdapter.createFromResource(this, array.colors, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        sp1.setAdapter(adapter1);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v)
