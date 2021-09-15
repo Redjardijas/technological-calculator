@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button btn, btn2;
     Double pech, pril, podr, perepl, g;
     Integer param;
-    EditText edt1, edt2, edt3, edt5, edt6, edt7, edt9;
+    EditText edt1, edt2, edt3, edt5, edt6, edt7, edt9, grsl;
     CheckBox dCheckBox, rBCheckBox, kCheckBox;
     TextView txt1, txt2, txt3, txt4, txt5;
     Spinner sp3, sp1;
@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         sp1 = findViewById(id.spinner);
         sp3 = findViewById(id.spinner3);
         btn = findViewById(id.button);
+        grsl = findViewById(id.grsl);
         edt1 = findViewById(id.ed1);
         edt2 = findViewById(id.ed2);
         edt3 = findViewById(id.ed4);
@@ -70,15 +71,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v)
-            {   double a = (edt1.getText() == null) ? 0 : Integer.parseInt(edt1.getText().toString());
+            {   double[] dominantFirstKoefs = {4.0, 3.8, 3.6, 3.3, 3.2, 3.0, 1.7, 1.4, 1.3, 1.2, 1.1, 1.0, 0.9, 0.8, 0.4 };
+                double[] dominantSecondtKoefs = {4.6, 4.5, 4.4, 4.2, 3.9, 3.2, 1.8, 1.7, 1.6, 1.5, 1.4, 1.3, 1.2, 1.1, 0.5 };
+                double[] dominantThiirdKoefs = {5.0, 4.8, 4.6, 4.3, 4.0, 3.5, 2.0, 1.8, 1.7, 1.6, 1.5, 1.4, 1.3, 1.2, 0.6 };
+                double[] romayorFirstKoefs = {3.8, 3.6, 3.5, 3.2, 3.0, 2.5, 1.5, 1.3, 1.2, 1.1, 1.0, 0.9, 0.8, 0.7 };
+                double[] romayorSecondKoefs = {4.4, 4.3, 4.2, 4.0, 3.8, 3.0, 1.7, 1.6, 1.5, 1.4, 1.3, 1.2, 1.1, 1.0 };
+                double[] romayorThirdKoefs = {4.8, 4.6, 4.4, 4.2, 4.0, 3.8, 3.0, 1.7, 1.6, 1.5, 1.4, 1.3, 1.2, 1.1, 1.0 };
+                double a = (edt1.getText() == null) ? 0 : Integer.parseInt(edt1.getText().toString());
                 double b = (edt2.getText() == null) ? 0 : Integer.parseInt(edt2.getText().toString());
                 double c = (edt3.getText() == null) ? 0 : Integer.parseInt(edt3.getText().toString());
                 double d = (edt5.getText() == null) ? 0 : Integer.parseInt(edt5.getText().toString());
                 double e = (edt6.getText() == null) ? 0 : Integer.parseInt(edt6.getText().toString());
                 double f = (edt7.getText() == null) ? 0 : Integer.parseInt(edt7.getText().toString());
                 double s = (edt9.getText() == null) ? 0 : Integer.parseInt(edt9.getText().toString());
+                int gr = (grsl.getText() == null) ? 0 : Integer.parseInt(edt9.getText().toString());
+                double[] priladkaD = {20, 25, 30};
+                double[] priladkaR = {10, 14, 16};
                 if(dCheckBox.isChecked()) {
-                    pril = 20.0;
+                    if(gr == 1){ pril = priladkaD[0];}
+                    if(gr == 2){ pril = priladkaD[1];}
+                    if(gr == 3){ pril = priladkaD[2];}
                     podr = 0.2;
                     perepl = 0.8;
                     pech = 1.7;
@@ -105,7 +117,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     }
                 }
                 if(rBCheckBox.isChecked()) {
-                    pril = 3.6;
+                    if(gr == 1){ pril = priladkaR[0];}
+                    if(gr == 2){ pril = priladkaD[1];}
+                    if(gr == 3){ pril = priladkaD[3];}
                     podr = 0.2;
                     perepl = 0.4;
                     pech = 10.0;

@@ -17,7 +17,13 @@
         <item name = "android:backgroundTint">@color/black</item>
     </style>
     <style name ="Spt" parent="SpecialTheme" >
-        <item name="android:textStyle">bold</item>
+        <item name="android:textStyle">italic</item>
+        <item name="android:textSize">14dp</item>
+
+        <item name="android:windowBackground">@color/purple_200</item>
+    </style>
+    <style name ="SptTV" parent="SpecialTheme" >
+        <item name="android:textStyle">italic</item>
         <item name="android:textSize">18dp</item>
 
         <item name="android:windowBackground">@color/purple_200</item>
