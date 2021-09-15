@@ -6,84 +6,74 @@
     android:layout_height="match_parent"
     android:visibility="visible"
     tools:context=".MainActivity">
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="60dp"
-        android:layout_height="38dp"
-        android:text="кг"
-        android:textSize="18sp"
+    <LinearLayout
+        android:layout_width="340dp"
+        android:layout_height="42dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.912"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintVertical_bias="0.699"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.852" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/dol"
-        style="@style/Spt"
-        android:layout_width="35dp"
-        android:layout_height="34dp"
-        android:text="1/"
+        <CheckBox
+            android:id="@+id/checkBox2"
+            android:layout_width="100dp"
+            android:layout_height="38dp"
+            android:background="#E81CBCAC"
+            android:backgroundTint="@color/purple_700"
+            android:backgroundTintMode="screen"
+            android:text="Доминант"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.9"
+            app:layout_constraintStart_toEndOf="@id/checkBox"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.699" />
+
+        <CheckBox
+            android:id="@+id/checkBox3"
+            android:layout_width="100dp"
+            android:layout_height="38dp"
+            android:background="@color/teal_200"
+            android:backgroundTint="#C0B5D8"
+            android:backgroundTintMode="screen"
+            android:text="Ксерокс"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/checkBox"
+            app:layout_constraintHorizontal_bias="0.541"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.699" />
+
+        <CheckBox
+            android:id="@+id/checkBox"
+            android:layout_width="100dp"
+            android:layout_height="38dp"
+            android:background="#ADC4FDF8"
+            android:backgroundTint="@color/purple_700"
+            android:backgroundTintMode="add"
+            android:text="Ромайор"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/checkBox2"
+            app:layout_constraintHorizontal_bias="0.955"
+            app:layout_constraintStart_toEndOf="@id/checkBox3"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.699" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.369"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintVertical_bias="0.299"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.153" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <EditText
-        android:id="@+id/ed9"
-        android:layout_width="44dp"
-        android:layout_height="49dp"
-        android:ems="10"
-        android:inputType="number"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="-0.108"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.156" />
+    </LinearLayout>
 
-    <CheckBox
-        android:id="@+id/checkBox2"
-        android:layout_width="100dp"
-        android:layout_height="38dp"
-        android:background="#E81CBCAC"
-        android:backgroundTint="@color/purple_700"
-        android:backgroundTintMode="screen"
-        android:text="Доминант"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.9"
-        app:layout_constraintStart_toEndOf="@id/checkBox"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.699" />
 
-    <Spinner
-        android:id="@+id/spinner3"
-        android:layout_width="151dp"
-        android:layout_height="35dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.88"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.153" />
-
-    <EditText
-        android:id="@+id/ed7"
-        android:layout_width="61dp"
-        android:layout_height="46dp"
-        android:ems="10"
-        android:inputType="number"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.877"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.604" />
 
     <TextView
         android:id="@+id/txtPaper2"
@@ -97,20 +87,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.36" />
-
-    <EditText
-        android:id="@+id/ed5"
-        android:layout_width="61dp"
-        android:layout_height="46dp"
-        android:ems="10"
-        android:inputType="number"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.36"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.481" />
-
     <EditText
         android:id="@+id/ed4"
         android:layout_width="136dp"
@@ -125,6 +101,31 @@
         app:layout_constraintVertical_bias="0.357" />
 
     <EditText
+        android:id="@+id/ed6"
+        android:layout_width="61dp"
+        android:layout_height="46dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.602"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.481" />
+    <EditText
+        android:id="@+id/ed5"
+        android:layout_width="61dp"
+        android:layout_height="46dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.36"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.481" />
+
+    <EditText
         android:id="@+id/ed2"
         android:layout_width="136dp"
         android:layout_height="43dp"
@@ -137,6 +138,28 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.255" />
 
+    <EditText
+        android:id="@+id/ed7"
+        android:layout_width="31dp"
+        android:layout_height="46dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.877"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.604" />
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="120dp"
+        android:layout_height="39dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.703"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.600" />
     <TextView
         android:id="@+id/txtPaper"
         style="@style/Spt"
@@ -150,19 +173,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.603" />
 
-    <EditText
-        android:id="@+id/ed6"
-        android:layout_width="61dp"
-        android:layout_height="46dp"
-        android:ems="10"
-        android:inputType="number"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.625"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.481" />
-
     <TextView
         android:id="@+id/size"
         style="@style/Spt"
@@ -175,6 +185,40 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.152" />
+    <TextView
+        android:id="@+id/dol"
+        style="@style/Spt"
+        android:layout_width="35dp"
+        android:layout_height="34dp"
+        android:text="1/"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.369"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.153" />
+    <EditText
+    android:id="@+id/ed9"
+    android:layout_width="44dp"
+    android:layout_height="49dp"
+    android:ems="10"
+    android:inputType="number"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="-0.108"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.156" />
+    <Spinner
+    android:id="@+id/spinner3"
+    android:layout_width="60dp"
+    android:layout_height="35dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.88"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.153" />
 
     <TextView
         android:id="@+id/edition"
@@ -188,6 +232,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.054" />
+    <EditText
+    android:id="@+id/ed1"
+    android:layout_width="136dp"
+    android:layout_height="43dp"
+    android:ems="10"
+    android:inputType="number"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.843"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_bias="0.055" />
 
     <TextView
         android:id="@+id/txtPages"
@@ -202,20 +258,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.25" />
 
-    <CheckBox
-        android:id="@+id/checkBox3"
-        android:layout_width="100dp"
-        android:layout_height="38dp"
-        android:background="@color/teal_200"
-        android:backgroundTint="#C0B5D8"
-        android:backgroundTintMode="screen"
-        android:text="Ксерокс"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/checkBox"
-        app:layout_constraintHorizontal_bias="0.541"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.699" />
 
     <Button
         android:id="@+id/button2"
@@ -230,7 +272,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.96" />
-
     <Button
         android:id="@+id/button"
         style="@style/SpecialTheme"
@@ -244,20 +285,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.96" />
-
-    <EditText
-        android:id="@+id/ed1"
-        android:layout_width="136dp"
-        android:layout_height="43dp"
-        android:ems="10"
-        android:inputType="number"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.843"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.055" />
-
     <TextView
         android:id="@+id/textView2"
         android:layout_width="180dp"
@@ -268,32 +295,23 @@
         app:layout_constraintHorizontal_bias="0.155"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.814" />
-
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="81dp"
-        android:layout_height="39dp"
+        app:layout_constraintVertical_bias="0.840" />
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="60dp"
+        android:layout_height="38dp"
+        android:text="кг"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.603"
+        app:layout_constraintHorizontal_bias="0.912"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.600" />
+        app:layout_constraintVertical_bias="0.852" />
 
-    <CheckBox
-        android:id="@+id/checkBox"
-        android:layout_width="100dp"
-        android:layout_height="38dp"
-        android:background="#ADC4FDF8"
-        android:backgroundTint="@color/purple_700"
-        android:backgroundTintMode="add"
-        android:text="Ромайор"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/checkBox2"
-        app:layout_constraintHorizontal_bias="0.955"
-        app:layout_constraintStart_toEndOf="@id/checkBox3"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.699" />
+
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
